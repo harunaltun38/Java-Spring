@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="utf-8">
+<link href="/css/shop.css" type="text/css" rel="stylesheet"
+	media="screen" />
+
+<title>Webshop</title>
+</head>
+
+<body>
+	<div>
+		<h1>Willkommen Auf der Bestellübersicht</h1>
+	</div>
+	<div class="products">
+		<div th:each="product : ${listProducts}">
+			<div class="box">
+				<p class="bezeichnung" th:title="${product.name}" th:text="${product.name}" th:data-price="${product.preis}"
+					th:onclick="zeige(this);berechneGesamtPreis(this);zeigeBestellungInWarenkorb(this);">defaultText</p>
+				<img alt="Bild" th:src="'css/'+${product.img}">
+			</div>
+		</div>
+		
+	</div>
+	<br><br><br>
+	<div id="formular">
+			<form>
+				<div>
+					<label for="name">Name</label> 
+					<input type="text" name="Name" value="" id="name">
+				</div>
+				<div>
+					<label for="stadt">Stadt</label> 
+					<input type="text"	name="stadt" value="" id="stadt">
+				</div>
+				<div>
+					<label for="adresse">Adresse</label> 
+					<input type="text"	name="adresse" value="" id="adresse">
+				</div>
+				
+				<div class= "warenkorb">
+				<h3 class="section-header">Warenkorb</h3>
+                            <div class="cart-row">
+                                <span class="cart-item cart-header cart-column">SPEISE</span>
+                                <span class="cart-price cart-header cart-column">PREIS</span>
+                                <span class="cart-quantity cart-header cart-column">ANZAHL</span>
+                            </div>
+                            <div class="cart-items">
+                            </div>
+                            <div class="cart-total">
+                                <span class="cart-total-title">Gesamt</span>
+                                <span class="cart-total-price">0$</span>
+                            </div>
+                            <input class="btn btn-primary btn-purchase" type="submit" value="BESTELLEN" />				
+				</div>
+				
+			</form>
+		</div>
+	<script type="text/javascript" src="js/shop.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+@charset "ISO-8859-1";
+
+
+.products{
+	display:flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	
+	
+	
+}
+
+.box{	
+margin:10px;
+	height: 40vh;
+  flex-grow: 1;
+}
+
+
+
+img {	
+	
+  max-height: 30%;
+  min-width: 30%;
+  
+}
+
+.bezeichnung{
+	text-align: center; 
+	 font-weight: bold;
+	
+}
